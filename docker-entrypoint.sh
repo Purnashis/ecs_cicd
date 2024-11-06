@@ -69,7 +69,8 @@ if [[ "$1" == apache2* ]] || [ "$1" = 'php-fpm' ]; then
 		# if there's /var/www/html/ content on PV
 		if [ -d /var/www/html/ ]; then
 			echo >&2 "WordPress found in $PWD - for update copying now..."
-			cp -ruf /usr/src/wordpress/* /var/www/html/
+			cp -ruf /usr/src/wordpress/wp-content/plugins/* /var/www/html/wp-content/plugins/
+			cp -ruf /usr/src/wordpress/wp-content/themes/* /var/www/html/wp-content/themes/
 		fi
 		echo >&2 "Complete! WordPress has been successfully updated to $PWD"
 	fi
